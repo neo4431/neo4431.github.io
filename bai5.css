@@ -1,25 +1,40 @@
 body {
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTCAPtQ8UtjXeKtDy7sbYdEueK-NCOyCwbsA&usqp=CAU);
-    
 }
 header {
     margin-right: auto;
     margin-left: auto;
-    background-color: white;
+    background: linear-gradient(180deg, white, black);
 }
 .container {
     display: inline-block;
-    margin-left: 10px;
+    margin: 0 5 0 5;
 }
 #name {
-    font-size: 20px;
+    margin-left: 20px;
+    font-size: 25px;
     font-weight: bolder;
-    color: rgb(255, 81, 0);
+    animation-name: tenshop;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes tenshop {
+    0% {
+        color: orange;
+        margin-left: 20%;
+    }
+    50% { 
+        color: blue;
+    }
+    100% {
+        color: brown;
+    }
 }
 .user {
     float: right;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 10px;
 }
 .user>a {
     color: black;
@@ -27,7 +42,7 @@ header {
 nav {
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(109, 109, 212);
+    background: linear-gradient(53deg,#ccfffc,#ffcccf);
     padding-top: 1;
 }
 .menu-item {
@@ -37,26 +52,28 @@ nav {
     padding: 10 30 10 30;
     border: 1px solid black;
     border-radius: 10%;
+    background: linear-gradient(53deg,#ccfffc,#ffcccf);
+    position: relative;
+    box-shadow: 3px 3px 3px 3px black;
+    
 }
 .menu-item>a {
     font-size: 20px;
     color: black;
-}
-.menu {
-    position: relative;
+    
 }
 .menu-item:hover .ul-list{
     display: block;
-    
+    box-shadow: 3px 3px 3px 3px black;
 }
 .ul-list {
     display: none;
     list-style: none;
     padding: 10 10 10 20;
     position: absolute;
-    top: 75%;
+    top: 100%;
     left: 5%;
-    background-color: rgb(109, 109, 212);
+    background: linear-gradient(53deg,#ccfffc,#ffcccf);
     border: 1px solid black;
     z-index: 1;
 }
@@ -71,6 +88,7 @@ nav {
 }
 .ao-hover:hover .ao-ul {
 display: block;
+box-shadow: 3px 3px 3px 3px black;
 }
 .ao-ul {
     display: none;
@@ -79,7 +97,7 @@ display: block;
     position: absolute;
     top: 0%;
     left: 85%;
-    background-color: rgb(109, 109, 212);
+    background: linear-gradient(53deg,#ccfffc,#ffcccf);
     border: 1px solid black;
 }
 a {
@@ -111,7 +129,7 @@ a {
     background-color: rgb(109, 109, 212);
     border: 1px solid black;
 }
-* {
+main {
     box-sizing: border-box;
 }
 .div-main {
@@ -122,43 +140,46 @@ a {
     
 }
 .div-item {
-    overflow: auto;
-    background-color: white;  
+    overflow: auto;  
+    background-image: url(https://us.123rf.com/450wm/sedatseven/sedatseven1601/sedatseven160100036/51502027-m%C3%A0u-x%C3%A1m-%C4%91en-gradient-n%E1%BB%81n-tr%E1%BB%ABu-t%C6%B0%E1%BB%A3ng-d%E1%BB%B1ng-h%C3%ACnh-%C4%91%E1%BB%83-tr%C6%B0ng-b%C3%A0y-montage-s%E1%BA%A3n-ph%E1%BA%A9m-c%E1%BB%A7a-b%E1%BA%A1n.jpg?ver=6);
 }
 .div-sanpham {
     float: left;
     width: 25%;
 }
-figure {
+.main-figure {
     overflow: hidden;
     width: 300px;
     position: relative;
+    box-shadow: 3px 3px 3px 3px black;
+    border-radius: 10%;
 }
 .image {
-    border-radius: 10%;
-    border: 1px solid black;
     width: 300px;
     transition: all 1s;
 }
-figure:hover .image {
+.main-figure:hover .image {
     transform: scale(1.5);
 }
-figure .overlay {
+.main-figure .overlay {
     position: absolute;
     text-align: center;
     top: 0%;
     left: 0%;
     right: 0%;
     height: 100%;
-    color: burlywood;
-    font-size: 20px;
+    color: black;
+    font-size: 30px;
     font-weight: bolder;
     display: none;
 }
-figure p {
+.overlay > p {
+    background: linear-gradient(53deg,#ccfffc,#ffcccf);
+}
+.main-figure p {
     margin-top: 100px;
 }
-figure:hover .overlay {
+.main-figure:hover .overlay {
     display: block;
     background-color: black;
     opacity: 0.7;
@@ -176,17 +197,17 @@ figure:hover .overlay {
     border-radius: 20%;
 }
 aside {
-    background-color: gray;
+    background: gray;
     padding-top: 1;
 }
 footer {
-    background-color: rgb(109, 109, 212);
+    background: linear-gradient(180deg,white,black)
 }
 .footer-a {
-    color: white;
+    color: black;
 }
 .footer-text {
-    color: rgb(136, 204, 224);
+    color: black;
 }
 .div-footer {
     display: inline-block;
@@ -207,7 +228,7 @@ footer {
     margin-left: 10px;
 }
 .div-sanpham2 {
-    margin: 50 20 100 50;
+
     background-image: url(https://img2.thuthuatphanmem.vn/uploads/2019/03/02/hinh-nen-powerpoint-xanh-duong-cuc-dep_012324053.jpeg);
     margin-left: 70px;
     margin-right: 70px;
