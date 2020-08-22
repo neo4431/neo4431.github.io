@@ -1,0 +1,186 @@
+.flex {
+    display: flex;
+}
+.flex.justify.center {
+    justify-content: center;
+}
+.flex.justify.start {
+    justify-content: flex-start;
+}
+.flex.align.center{
+    align-items: center;
+}
+.flex.wrap {
+    flex-wrap: wrap;
+}
+.flex.column {
+    flex-direction: column;
+}
+.container {  
+    justify-content: space-around;
+    width: 80%;
+}
+.tieude>img {
+    height: 50px;
+    max-width: 150px;
+}
+.tieude {
+    display: flex;
+    color: green;
+}
+.tieude p {
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.menu {
+    justify-content: space-around;
+    width: 80%;
+    background-color: rgb(97, 156, 243);
+}
+.menu-item {
+    border: 1px solid black;
+    padding: 7px;
+    width: 100%;
+    text-align: center;
+}
+.item-section3 {
+    width: 80%;
+}
+nav {
+    margin-top: 10px;
+}
+section img {
+    max-width: 100%;
+}
+.div-section2 {
+    width: 80%;
+}
+.item {
+    width: 18%;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+    overflow: hidden;
+    position: relative;
+}
+.item p {
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+.item:hover {
+    box-shadow: 5px 5px 15px black;
+}
+.item:hover img {
+    transform: scale(1.5);
+}
+.item img {
+    transition: all 1s;
+}
+.overlay {
+    position: absolute;
+    text-align: center;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    height: 100%;
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    display: none;
+}
+.item:hover .overlay {
+    display: block;
+    background-color: black;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a, .item a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+header a {
+    text-decoration: none;
+    color: green;
+    font-size: 18px;
+}
+footer img {
+    width: 250px;
+}
+footer > div {
+    width: 80%;
+    border-top: 1px solid grey;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.lienhe1, .gioithieu {
+    width: 80%;
+}
+.div-lienhe {
+    width: 30%;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+.div-lienhe:hover .lienhe-over {
+    display: block;
+    background-color: black;
+    opacity: 0.9;
+    display: flex;
+}
+
+.lienhe-over {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    height: 100%;
+    color: white;
+    font-size: 15px;
+    display: none;
+}
+.div-lienhe:hover {
+    box-shadow: 5px 5px 15px black;
+}
+.div-lienhe img {
+    transition: all 1s;
+}
+li {
+    margin-top: 10px;
+}
+li>a {
+    color: white;
+    font-size: 15px;
+}
+.div-lienhe p {
+    text-align: center;
+}
+.gioithieu2 {
+    margin: 10px;
+    display: flex;
+}
+.gioithieu-item {
+    width: 50%;
+    margin-right: 10px;
+}
+.gioithieu-item > img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
