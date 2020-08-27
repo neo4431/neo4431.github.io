@@ -329,3 +329,6 @@ ul {
 .item-section3 > .item {
     width:22%;
 }
+body {
+    margin: 0px;
+}
