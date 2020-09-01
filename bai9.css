@@ -1,6 +1,5 @@
 body {
-    background-image: url(https://i.pinimg.com/originals/e8/ad/01/e8ad01d72174e4e249b714e46d4ddc77.jpg);
-    max-height: 100%;
+    background-image: url(https://sc02.alicdn.com/kf/HTB1dZLMHFXXXXcIXVXXq6xXFXXXp.jpg);
 }
 .container{
     position: relative;
@@ -14,7 +13,7 @@ body {
     background-color: black;
     opacity: 0.5;
     width: 100%;
-    height: 100%;
+    height: 110%;
     position: absolute;
     top: -10%;
     left: 0;
@@ -123,9 +122,7 @@ ul li {
     align-items: center;
     padding-left: 0;
 }
-.menu-item a {
-    padding: 5px 20px;
-}
+
 .forum {
     display: flex;
     justify-content: center;
@@ -152,19 +149,21 @@ i {
 }
 .hot-container {
     width: 900px;
-    background-color: rgb(0, 56, 102);
+    background-color: rgb(1, 77, 139);
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 1px;
 }
 img {
     width: 100%;
 }
 .hot-item-container {
     display: grid;
-    gap: 5px;
+    gap: 10px;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    margin: 10px
+    margin: 10px;
+    margin-bottom: 5px;
 }
 .hot-items {
     position: relative;
@@ -203,7 +202,7 @@ img {
 }
 .main-container {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 65% 35%;
     gap: 10px;
     margin: 10px;
     margin-right: 20px;
@@ -215,16 +214,15 @@ img {
 }
 .main-right {
     display: grid;
-    grid-template-rows: 500px 500px 500px 500px 200px;
+    grid-template-rows: 530px 460px 300px;
     gap: 10px;
 }
-.item-right {
+.main-right > div {
     background-color: white;
 }
 .post-item-list {
     display: grid;
     grid-template-columns: 35% 20% 20% 25%;
-    gap: 5px;
     padding: 10px;
 }
 .post-left {
@@ -259,6 +257,7 @@ img {
 .info-items2 p {
     text-align: center;
     font-weight: bolder;
+    color: blue;
 }
 .info-items1 {
     grid-area: img;
@@ -287,4 +286,146 @@ img {
 }
 .info-items6 span {
     color: red;
+}
+.li-list > a {
+    color: blue;
+}
+.info-items3 a {
+    color: blue;
+}
+.title-item-right{
+    background-color: orange;
+    padding: 5px;
+}
+.item-right {
+    margin: 5px;
+}
+.menu-item-right {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+.menu-item-right > li {
+    padding: 10px;  
+}
+.list-item-right {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: repeat(15, 30px);
+    margin-top: 10px;
+}
+.list-item-right div {
+    overflow: hidden;
+}
+.list-item-right a {
+    color: blue;
+}
+.menu-item-right a {
+    color: gray;
+    font-weight: bolder;
+}
+.menu-item-right a:hover {
+    color: green;
+}
+.title-new {
+    background-color: green;
+    padding: 5px;
+}
+.list-new {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.list-new > div {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+footer .item-footer {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+footer span {
+    color: green;
+}
+footer>div>a {
+    color: rgb(0, 225, 255);
+    text-align: center;
+    font-size: 14px;
+}
+footer>div {
+    margin: 20px;
+}
+select {
+    width: 100px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+.nav-item-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.next {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item-right div {
+    margin-right: 5px;
+}
+.next i {
+    color: red;
+}
+.icon-next {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.next a {
+    color: black;
+}
+.next:hover{
+    background-color: gray;
+    opacity: 0.8;
+}
+.item-list {
+    position: relative;
+    padding: 5px;
+}
+.menu-item-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 5px;
+}
+.item-list:hover .menu-item-list{
+    display: block;
+    background-color: rgb(0, 225, 255);
+    width: 300px;
+    z-index: 10;
+}
+.item-list:hover {
+    background-color: rgb(0, 225, 255)
+}
+.menu-item li {
+    font-weight: bolder;
+    padding: 10px 20px;
+}
+.menu-item a {
+    color: black;
+}
+.menu-item-list a {
+    font-weight: normal;
 }
