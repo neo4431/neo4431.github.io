@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-container {
+            display: flex;
+            align-items: flex-start;
+        }
+        .label1 {
+            margin-right: 200px;
+        }
+        .border{
+            margin-right: 30px;
+        }
+        .item-list1 {
+            margin-right: 100px;
+        }
+        .item-list {
+            margin-right: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" value="changeContent" onclick="changeContent()">
+        <p id='para'></p>
+    </div>
+    <div class=container>
+        <form class="item-container">
+            <label for="number" class="label1">Please Enter Your Budget</br>
+                <input type="number" name="" id="budget-amount"></br>
+                <input type="button" value="Calculate" onclick="calc()">
+            </label>
+            <div class="border">
+                <h2>Budget</h2>
+                <p>$ <span id="para-budget">0</span></p>
+            </div>
+            <div class="border">
+                <h2>Expenses</h2>
+                <p>$ <span id="para-expenseAmount">0</span></p>
+            </div>
+            <div class="border">
+                <h2>Balance</h2>
+                <p>$ <span id="para-balance">0</span></p>
+            </div>
+        </form>
+        <form class=item-container>
+            <div class="item-list1">
+                <label for="text">Please Please Enter Your Expense</br>
+                    <input type="text" name="" id="expense"></label></br>
+                <label for="number">Please Please Enter Expense Amount</br>
+                    <input type="number" name="" id="expense-amount"></label></br>
+                <input type="button" value="Add Expense" onclick="addExpense()">
+            </div>
+            <div class="item-list">
+                <h3>Expense Title</h3>
+                <p id="expense-title"></p>
+            </div>
+            <div class="item-list">
+                <h3>Expense Value</h3>
+                <p id="expense-value"></p>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="network.js"></script>
+</body>
+
+</html>
