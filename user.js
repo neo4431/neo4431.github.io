@@ -1,4 +1,4 @@
-export default class User {
+class User {
     constructor (name, age, address, dateOfBirth, money) {
         this.userName = name;
         this.userAge = age;
@@ -16,7 +16,7 @@ export default class User {
         return this.userMoney += value;
     }
 }
-    myUser = new User('hieu', 16, 'Ha Noi', '12/03/20', 1000);
-    myUser.hello();
-    myUser.balance();
-    myUser.addMoney(2000);
+    // let myUser = new User('hieu', 16, 'Ha Noi', '12/03/20', 1000);
+    //  myUser.hello();
+    //  myUser.balance();
+    //  myUser.addMoney(2000);

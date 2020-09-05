@@ -1,4 +1,5 @@
-import User from "./user.js";
+// import User from "./user.js";
+// import Social from "./social.js";
 function changeContent() {
     var num = Math.floor(Math.random() * (7 - 1 + 1)) + 1;
     switch (num) {
