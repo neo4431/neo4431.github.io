@@ -4,215 +4,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
-    <link rel="shortcut icon"
-        href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTvEaoYEh7PiKV4BjwNBCMwbhDRSsRyHEVH7Q&usqp=CAU"
-        type="image/x-icon">
-    <link rel="stylesheet" href="profile.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        p {
+            background-color: grey;
+        }
+    </style>
 </head>
 
 <body>
-    <nav>
-        <div class="menu-bar">
-            <div class="menu-item">
-                <img src="gallery/avat.jpg"
-                    alt="">
-                <p>NGUYỄN TRUNG HIẾU</p>
-                <div>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
-                    <i class="fa fa-skype" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="menu-item2">
-                <ul class="ul-menu">
-                    <a href="#home">
-                        <li><i class="fa fa-home" aria-hidden="true"></i>Home</li>
-                    </a>
-                    <a href="#about" class="nav-bar active">
-                        <li><i class="fa fa-user" aria-hidden="true"></i>About</li>
-                    </a>
-                    <a href="#skills" class="nav-bar active">
-                        <li><i class="fa fa-star" aria-hidden="true"></i>Skills & Education</li>
-                    </a>
-                    <a href="#project" class="nav-bar active">
-                        <li><i class="fa fa-eye" aria-hidden="true"></i></i>My Photos</li>
-                    </a>
-                    <a href="#contact" class="nav-bar active">
-                        <li><i class="fa fa-address-book-o" aria-hidden="true"></i>Contact</li>
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <main id="fullpage">
-        <div id="home">
-            <img src="https://static.wixstatic.com/media/9156348f9b554babaa4d6c009ce2db0f.jpg/v1/fill/w_1216,h_1200,al_c,q_85/9156348f9b554babaa4d6c009ce2db0f.webp"
-                alt="">
-            <p class="animate__animated animate__backInLeft">Hi!</br>
-                My name is Trung Hieu<br />
-                I'm Web Developer</p>
-        </div>
-        <section id="about">
-            <div class="about1">
-                <h2 data-aos="fade-down" data-aos-duration="1200">About me</h2>
-                <hr width="50px" size="4px" color="blue" align="left" data-aos="fade-down" data-aos-duration="1200" />
-                <p data-aos="fade-down"><span>Mục tiêu nghề nghiệp:</span> Có một công việc ổn định, hoàn thành xuất sắc nhiệm vụ được giao, tích lũy thêm nhiều kiến thức và kinh nghiệm, rèn luyện kỹ năng xử lý công việc nhanh chóng và hiệu quả.
-                    Trở thành nhân viên cấp cao.
-                </p>
-            </div>
-            <div class="about-item">
-                <img data-aos="fade-right" data-aos-duration="1200"
-                    src="https://static.wixstatic.com/media/9156348f9b554babaa4d6c009ce2db0f.jpg/v1/fill/w_1216,h_1200,al_c,q_85/9156348f9b554babaa4d6c009ce2db0f.webp"
-                    alt="">
-                <div data-aos="fade-left" data-aos-duration="1200">
-                    <h3>Web Developer</h3>
-                    <ul class="ul-about">
-                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><span>Ngày sinh:</span>&nbsp;31/03/1991
-                        </li>
-                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><span>Số điện
-                                thoại:</span>&nbsp;0948890788</li>
-                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><span>Địa chỉ:</span>&nbsp;Chương Dương-
-                            Hoàn Kiếm- Hà Nội</li>
-                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><span>Tuổi:</span>&nbsp;29</li>
-                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><span>Trình độ:</span>&nbsp;Fresher/Junior</li>
-                        <li><i class="fa fa-angle-right"
-                                aria-hidden="true"></i><span>Email:</span>&nbsp;hieunguyen120318@gmail.com</li>
-                    </ul>
-                    <p>Tôi sinh ra và lớn lên tại Hà Nội. Sau khi trải qua một số công việc khác nhau, tôi đã quyết định trở thành lập trình viên và sẽ nỗ lực hết mình để theo đuổi ngành này</p>
-                </div>
-            </div>
-        </section>
-        <section id="skills">
-            <div>
-                <h2 data-aos="fade-down" data-aos-duration="1200">Skills</h2>
-                <hr width="50px" size="4px" color="blue" align="left" data-aos="fade-down" data-aos-duration="1200" />
-                <div data-aos="fade-right" data-aos-duration="1200">
-                    <p>HTML</p>
-                    <div class="container">
-                        <div class="skills html">80%</div>
-                    </div>
+    <canvas id="canvas"></canvas>
+    <canvas id='thailand'></canvas>
+    <script>
+        const canvas = document.getElementById('canvas')
+        canvas.width = 1000;
+        canvas.height = 600;
+        canvas.style.border = '1px solid red';
+        const ctx = canvas.getContext('2d')
+        // fillStyle là chọn background
+        // fill là đổi màu cho background
+        // strokeStyle là chọn màu viền
+        // stroke là đổi màu viền
+        // khi không chọn màu thì mặc định là màu đen
 
-                    <p>CSS</p>
-                    <div class="container">
-                        <div class="skills css">70%</div>
-                    </div>
+        // ctx.fillStyle = 'green';
+        // ctx.fillRect(0,0,100,100);
 
-                    <p>JavaScript</p>
-                    <div class="container">
-                        <div class="skills js">20%</div>
-                    </div>
+        // ctx.fillStyle = 'black';
+        // ctx.fillRect(300,0,100,100);
 
-                    <p>Database</p>
-                    <div class="container">
-                        <div class="skills data">0%</div>
-                    </div>
-                </div>
-            </div>
-            <div class="edu-item">
-                <div id="edu-div-1" data-aos="fade-right" data-aos-duration="1200">
-                    <h2>Education</h2>
-                    <h4>Đại học Trà Vinh</h4>
-                    <ul>
-                        <li>Điều dưỡng đa khoa</li>
-                        <li>2012-2014</li>
-                    </ul>
-                    <h4>Học viện CNTT Techmaster</h4>
-                    <ul>
-                        <li>Lập trình cơ bản: html,css,Js,git,...</li>
-                        <li>2020-2021</li>
-                    </ul>
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1200" id="edu-div-2">
-                    <h2>Experience</h2>
-                    <h4>Bệnh viện đa khoa Thạch Thất</h4>
-                    <ul>
-                        <li>Điều dưỡng</li>
-                        <li>2014-2018</li>
-                    </ul>
-                    <h4>Công ty CP Maslow Việt Nam</h4>
-                    <ul>
-                        <li>Nhân viên kinh doanh</li>
-                        <li>2018-2019</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="project">
-            <div class="title-contact">
-                <h2 data-aos="fade-down" data-aos-duration="1200">My Photos</h2>
-                <hr width="50px" size="4px" color="blue" align="left" data-aos="fade-down" data-aos-duration="1200" />
-            </div>
-            <div id="grid" class="cols">
-                <div class="box one"><img src="gallery/c9e6e25ed2e728564856acbdf10d2c28.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box two"><img src="gallery/box2.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box one"><img src="gallery/hinh anh 3d dep 1.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box three"><img src="gallery/box3.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box two"><img src="gallery/box2-2.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box five"><img src="gallery/box5.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box six"><img src="gallery/box1-1.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box two"><img src="gallery/box2-1.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box three"><img src="gallery/box3-2.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box seven"><img src="gallery/box7.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box six"><img src="gallery/box8-1.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box six"><img src="gallery/box6-1.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box three"><img src="gallery/anhabc.jpg" alt="" width="100%" height="100%"></div>
-                <div class="box eight"><img src="gallery/chumeo.jpg" alt="" width="100%" height="100%"></div>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="title-contact">
-                <h2 data-aos="fade-down" data-aos-duration="1200">Contact</h2>
-                <hr width="50px" size="4px" color="blue" align="left" data-aos="fade-down" data-aos-duration="1200" />
-            </div>
-            <div class="contact-container" data-aos="fade-down" data-aos-duration="1200">
-                <form action="/action_page.php">
-                    <label for="fname">Full Name</label>
-                    <input type="text" id="fname" name="fullname" placeholder="Your name..">
+        // ctx.fillStyle = 'yellow';
+        // ctx.fillRect(600,0,100,100);
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email">
+        // ctx.fillStyle = 'cyan';
+        // ctx.fillRect(0,200,100,100);
 
-                    <label for="subject">Write</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.."
-                        style="height:200px"></textarea>
-                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-                        <i class="fa fa-paper-plane"></i> SEND
-                    </button>
-                </form>
+        // ctx.fillStyle = 'orange';
+        // ctx.fillRect(0,400,100,100);
 
-                <div class="contact-info" data-aos="fade-up" data-aos-duration="1200">
-                    <div class="contact-cont2">
-                        <h3><i class="fa fa-map-marker cl-atlantis"></i> Address</h3>
-                        <p>881 Hồng Hà<br>
-                            Chương Dương, Hoàn Kiếm, Hà Nội<br></p>
-                    </div>
-                    <div class="contact-phone">
-                        <h3><i class="fa fa-phone cl-atlantis"></i> Phone</h3>
-                        <a href="tel:+84948890788" style="text-decoration: none; color: black;">
-                            <p>+84948890788
-                            </p>
-                        </a>
-                    </div>
-                    <div class="contact-mail">
-                        <h3><i class="fa fa-envelope-o cl-atlantis"></i> Email</h3>
-                        <address class="address-details-f">
-                            <a href="mailto:hieunguyen120318@gmail.com" class=""
-                                style="text-decoration: none;color:#093aa3;">
-                                <p>hieunguyen120318@gmail.com</p>
-                            </a>
-                        </address>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
-    
+        // ctx.fillStyle = 'red';
+        // ctx.fillRect(600,200,100,100);
+
+        // ctx.fillStyle = 'blue';
+        // ctx.fillRect(600,400,100,100);
+
+        // ctx.fillStyle = 'blueviolet';
+        // ctx.fillRect(300,200,100,100);
+
+        // ctx.fillStyle = 'greenyellow';
+        // ctx.fillRect(300,400,100,100);
+        // ctx.fillStyle = 'white';
+        // ctx.strokeStyle = 'black';
+        // ctx.rect(200,150,300,200);
+        // ctx.fill()
+        // ctx.stroke()
+
+        // ctx.beginPath();
+        // ctx.fillStyle = 'red';
+        // ctx.strokeStyle = 'red';
+        // ctx.arc(350, 250, 50, 0, Math.PI*2, false)
+        // ctx.stroke();
+        // ctx.fill();
+
+        // ctx.fillStyle = 'white';
+        // ctx.strokeStyle = 'black';
+        // ctx.arc(350, 250, 200, 0, Math.PI*2, false)
+        // ctx.stroke();
+        // ctx.fill();
+
+        // ctx.beginPath()
+        // ctx.fillStyle = 'white';
+        // ctx.strokeStyle = 'black';
+        // ctx.arc(250, 200, 20, 0, Math.PI*2, false)
+        // ctx.stroke();
+        // ctx.fill();
+
+        // ctx.beginPath()
+        // ctx.fillStyle = 'white';
+        // ctx.strokeStyle = 'black';
+        // ctx.arc(450, 200, 20, 0, Math.PI*2, false)
+        // ctx.stroke();
+        // ctx.fill();
+
+        // ctx.beginPath()
+        // ctx.fillStyle = 'white';
+        // ctx.strokeStyle = 'black';
+        // ctx.arc(350, 250, 150, 0, Math.PI, false)
+        // ctx.stroke();
+        // ctx.fill();
+
+        // ctx.strokeStyle = "black";
+        // ctx.fillStyle = "white";
+        // ctx.moveTo(100,100);
+        // ctx.lineTo(100,300);
+        // ctx.lineTo(500,300);
+        // ctx.lineTo(500,100);
+        // ctx.lineTo(100,100);
+        // ctx.stroke();
+        // ctx.fill()
+
+        // ctx.font = "italic 40pt calibri";
+        // ctx.fillStyle = 'green';
+
+        // ctx.textAlign='center';
+        // ctx.fillText('alo',x,y-300)
+        // Lưu ý : một số câu lệnh cần xem thêm : save(), retore(), clearRect().
+
+        // shadow
+        // ctx.fillStyle = 'red';
+        // ctx.rect(100,100,500,300);
+        // ctx.shadowColor = 'black';
+        // ctx.shadowOffsetX = '20';
+        // ctx.shadowOffsetY = '30';
+        // ctx.shadowBlur = '20'
+        // ctx.fill();
+
+        // dùng class trong canvas
+        // class Rect {
+        //     constructor(x,y,width,height,color) {
+        //         this.x = x;
+        //         this.y = y;
+        //         this.width = width;
+        //         this.height = height;
+        //         this.color = color;
+        //     }
+
+        //     draw() {
+        //         ctx.beginPath()
+        //         ctx.fillStyle = this.color
+        //         ctx.rect(this.x, this.y, this.width, this.height)
+        //         ctx.fill()
+        //     }
+        // }
+        // let rect = new Rect(0,0,100,100,'red')
+        // let rect1 = new Rect(0,250,100,100,'oranger')
+        // let rect2 = new Rect(0,500,100,100,'ryan')
+        // let rect3 = new Rect(450,0,100,100,'green')
+        // let rect4 = new Rect(450,250,100,100,'yellow')
+        // let rect5 = new Rect(450,500,100,100,'grey')
+        // let rect6 = new Rect(900,0,100,100,'black')
+        // let rect7 = new Rect(900,250,100,100,'greenyellow')
+        // let rect8 = new Rect(900,500,100,100,'blue')
+
+        // rect.draw()
+        // rect1.draw()
+        // rect2.draw()
+        // rect3.draw()
+        // rect4.draw()
+        // rect5.draw()
+        // rect6.draw()
+        // rect7.draw()
+        // rect8.draw()
+        // class Arc {
+        //     constructor(x, y, radius, counterClockwise) {
+        //         this.x = x;
+        //         this.y = y;
+        //         this.radius = radius;
+        //         this.counterClockwise = counterClockwise;
+        //     }
+
+        //     draw() {
+        //         ctx.beginPath();
+        //         ctx.strokeStyle = 'black';
+        //         ctx.arc(this.x, this.y, this.radius, this.counterClockwise);
+        //         ctx.stroke();
+        //         ctx.fill();
+        //     }
+        // }
+        // let arc1 = new Arc(250, 200, 20, false)
+        // let arc2 = new Arc(250, 200, 20, false)
+        // let arc3 = new Arc(250, 200, 20, false)
+
+        class Arc {
+            constructor(x, y, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.stroke();
+                ctx.fill();
+            }
+        }
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+        let arr = ['black', 'green', 'blue', 'yellow', 'red']
+        function arcDraw() {
+            for (i = 0; i < 5; i++) {
+                let arc = new Arc(random(100, canvas.width - 100), random(100, canvas.height - 100), random(10, 50), arr[i])
+                arc.draw()
+            }
+        }
+        
+        setInterval(function(){
+            ctx.clearRect(0,0, canvas.width, canvas.height)
+            arcDraw()
+        }, 1000)
+    </script>
 </body>
 
 </html>
