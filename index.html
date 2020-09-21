@@ -4,208 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        p {
-            background-color: grey;
-        }
-    </style>
+    <title>ChessBoard</title>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-    <canvas id='thailand'></canvas>
     <script>
         const canvas = document.getElementById('canvas')
-        canvas.width = 1000;
-        canvas.height = 600;
-        canvas.style.border = '1px solid red';
-        const ctx = canvas.getContext('2d')
-        // fillStyle là chọn background
-        // fill là đổi màu cho background
-        // strokeStyle là chọn màu viền
-        // stroke là đổi màu viền
-        // khi không chọn màu thì mặc định là màu đen
+        canvas.width = 900;
+        canvas.height = 900;
+        canvas.style.border = '1px solid black';
+        canvas.style.backgroundColor = 'rgb(255, 179, 72)';
+        const ctx = canvas.getContext('2d');
 
-        // ctx.fillStyle = 'green';
-        // ctx.fillRect(0,0,100,100);
+        ctx.rect(50, 50, 800, 800)
+        ctx.fillStyle = 'rgb(255, 179, 72)';
+        ctx.strokeStyle = 'black';
+        ctx.fill();
+        ctx.stroke();
 
-        // ctx.fillStyle = 'black';
-        // ctx.fillRect(300,0,100,100);
-
-        // ctx.fillStyle = 'yellow';
-        // ctx.fillRect(600,0,100,100);
-
-        // ctx.fillStyle = 'cyan';
-        // ctx.fillRect(0,200,100,100);
-
-        // ctx.fillStyle = 'orange';
-        // ctx.fillRect(0,400,100,100);
-
-        // ctx.fillStyle = 'red';
-        // ctx.fillRect(600,200,100,100);
-
-        // ctx.fillStyle = 'blue';
-        // ctx.fillRect(600,400,100,100);
-
-        // ctx.fillStyle = 'blueviolet';
-        // ctx.fillRect(300,200,100,100);
-
-        // ctx.fillStyle = 'greenyellow';
-        // ctx.fillRect(300,400,100,100);
-        // ctx.fillStyle = 'white';
-        // ctx.strokeStyle = 'black';
-        // ctx.rect(200,150,300,200);
-        // ctx.fill()
-        // ctx.stroke()
-
-        // ctx.beginPath();
-        // ctx.fillStyle = 'red';
-        // ctx.strokeStyle = 'red';
-        // ctx.arc(350, 250, 50, 0, Math.PI*2, false)
-        // ctx.stroke();
-        // ctx.fill();
-
-        // ctx.fillStyle = 'white';
-        // ctx.strokeStyle = 'black';
-        // ctx.arc(350, 250, 200, 0, Math.PI*2, false)
-        // ctx.stroke();
-        // ctx.fill();
-
-        // ctx.beginPath()
-        // ctx.fillStyle = 'white';
-        // ctx.strokeStyle = 'black';
-        // ctx.arc(250, 200, 20, 0, Math.PI*2, false)
-        // ctx.stroke();
-        // ctx.fill();
-
-        // ctx.beginPath()
-        // ctx.fillStyle = 'white';
-        // ctx.strokeStyle = 'black';
-        // ctx.arc(450, 200, 20, 0, Math.PI*2, false)
-        // ctx.stroke();
-        // ctx.fill();
-
-        // ctx.beginPath()
-        // ctx.fillStyle = 'white';
-        // ctx.strokeStyle = 'black';
-        // ctx.arc(350, 250, 150, 0, Math.PI, false)
-        // ctx.stroke();
-        // ctx.fill();
-
-        // ctx.strokeStyle = "black";
-        // ctx.fillStyle = "white";
-        // ctx.moveTo(100,100);
-        // ctx.lineTo(100,300);
-        // ctx.lineTo(500,300);
-        // ctx.lineTo(500,100);
-        // ctx.lineTo(100,100);
-        // ctx.stroke();
-        // ctx.fill()
-
-        // ctx.font = "italic 40pt calibri";
-        // ctx.fillStyle = 'green';
-
-        // ctx.textAlign='center';
-        // ctx.fillText('alo',x,y-300)
-        // Lưu ý : một số câu lệnh cần xem thêm : save(), retore(), clearRect().
-
-        // shadow
-        // ctx.fillStyle = 'red';
-        // ctx.rect(100,100,500,300);
-        // ctx.shadowColor = 'black';
-        // ctx.shadowOffsetX = '20';
-        // ctx.shadowOffsetY = '30';
-        // ctx.shadowBlur = '20'
-        // ctx.fill();
-
-        // dùng class trong canvas
-        // class Rect {
-        //     constructor(x,y,width,height,color) {
-        //         this.x = x;
-        //         this.y = y;
-        //         this.width = width;
-        //         this.height = height;
-        //         this.color = color;
-        //     }
-
-        //     draw() {
-        //         ctx.beginPath()
-        //         ctx.fillStyle = this.color
-        //         ctx.rect(this.x, this.y, this.width, this.height)
-        //         ctx.fill()
-        //     }
-        // }
-        // let rect = new Rect(0,0,100,100,'red')
-        // let rect1 = new Rect(0,250,100,100,'oranger')
-        // let rect2 = new Rect(0,500,100,100,'ryan')
-        // let rect3 = new Rect(450,0,100,100,'green')
-        // let rect4 = new Rect(450,250,100,100,'yellow')
-        // let rect5 = new Rect(450,500,100,100,'grey')
-        // let rect6 = new Rect(900,0,100,100,'black')
-        // let rect7 = new Rect(900,250,100,100,'greenyellow')
-        // let rect8 = new Rect(900,500,100,100,'blue')
-
-        // rect.draw()
-        // rect1.draw()
-        // rect2.draw()
-        // rect3.draw()
-        // rect4.draw()
-        // rect5.draw()
-        // rect6.draw()
-        // rect7.draw()
-        // rect8.draw()
-        // class Arc {
-        //     constructor(x, y, radius, counterClockwise) {
-        //         this.x = x;
-        //         this.y = y;
-        //         this.radius = radius;
-        //         this.counterClockwise = counterClockwise;
-        //     }
-
-        //     draw() {
-        //         ctx.beginPath();
-        //         ctx.strokeStyle = 'black';
-        //         ctx.arc(this.x, this.y, this.radius, this.counterClockwise);
-        //         ctx.stroke();
-        //         ctx.fill();
-        //     }
-        // }
-        // let arc1 = new Arc(250, 200, 20, false)
-        // let arc2 = new Arc(250, 200, 20, false)
-        // let arc3 = new Arc(250, 200, 20, false)
-
-        class Arc {
-            constructor(x, y, radius, color) {
+        ctx.beginPath();
+        class Rect {
+            constructor(x, y, width, height, color) {
                 this.x = x;
                 this.y = y;
-                this.radius = radius;
+                this.width = width;
+                this.height = height;
                 this.color = color;
             }
 
-            draw() {
+            drawRect() {
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-                ctx.stroke();
+                ctx.rect(this.x, this.y, this.width, this.height)
                 ctx.fill();
             }
         }
-        function random(min, max) {
-            return Math.floor(Math.random() * (max - min) + min)
-        }
-        let arr = ['black', 'green', 'blue', 'yellow', 'red']
-        function arcDraw() {
-            for (i = 0; i < 5; i++) {
-                let arc = new Arc(random(100, canvas.width - 100), random(100, canvas.height - 100), random(10, 50), arr[i])
-                arc.draw()
+        let arrColor = ['brown', 'rgb(233, 201, 156)']
+        function draw() {
+            for (let i = 1; i < 16; i = i + 4) {
+                for (let j = 3; j < 16; j = j + 4) {
+                    let rect = new Rect(50 * j, 50 * i, 100, 100, 'brown')
+                    let rect2 = new Rect(50 * (j - 2), 50 * (i + 2), 100, 100, 'brown')
+                    rect.drawRect()
+                    rect2.drawRect()
+                }
             }
         }
+        draw()
+        class Text {
+            constructor(para, x, y) {
+                this.para = para;
+                this.x = x;
+                this.y = y;
+            }
+
+            drawText() {
+                ctx.beginPath();
+                ctx.fillStyle = 'black';
+                ctx.font = 'normal 40pt calibri';
+                ctx.textAlign = 'center';
+                ctx.fillText(this.para, this.x, this.y);
+                ctx.fill();
+            }
+        }
+        let arrText1 = [8, 7, 6, 5, 4, 3, 2, 1];
+        let arrText2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+        function text() {
+            for (let i = 0; i < 8; i++) {
+                let textLeft = new Text(arrText1[i], 25, 25 + (100 * (i + 1)));
+                let textRight = new Text(arrText1[i], 875, 25 + (100 * (i + 1)));
+                let textTop = new Text(arrText2[i], 100 * (i + 1), 40);
+                let textBottom = new Text(arrText2[i], 100 * (i + 1), 890);
+                textLeft.drawText();
+                textRight.drawText();
+                textTop.drawText();
+                textBottom.drawText();
+            }
+        }
+        text()
+
+        class Arc {
+            constructor(x, y, radius, startAngle, endAngle, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.startAngle = startAngle;
+                this.endAngle = endAngle;
+                this.color = color;
+            }
+
+            arcDraw() {
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.arc(this.x, this.y, this.radius, this.startAngle, this.endAngle, true);
+                ctx.fill();
+            }
+        }
+
+        class Line {
+            constructor(moveToX, moveToY, lineToX, lineToY, width, color, lineCap) {
+                this.moveToX = moveToX;
+                this.moveToY = moveToY;
+                this.lineToX = lineToX;
+                this.lineToY = lineToY;
+                this.width = width;
+                this.color = color;
+                this.lineCap = lineCap;
+            }
+            lineDraw() {
+                ctx.beginPath();
+                ctx.moveTo(this.moveToX, this.moveToY);
+                ctx.lineTo(this.lineToX, this.lineToY);
+                ctx.lineWidth = this.width;
+                ctx.strokeStyle = this.color;
+                ctx.lineCap = this.lineCap;
+                ctx.stroke();
+            }
+        }
+        function conTot() {
+            for (i = 0; i < 8; i++) {
+                let lineTotDen1 = new Line(73+(100*i), 240, 127+(100*i), 240, 10, 'black','round');
+                let lineTotDen2 = new Line(85+(100*i), 210, 115+(100*i), 210, 7, 'black','round')
+                let arcTotDen1 = new Arc(100+(100*i), 235, 25, 0, Math.PI, 'black');
+                let arcTotDen2 = new Arc(100+(100*i), 197, 15, 0, Math.PI * 2, 'black');
+                let arcTotDen3 = new Arc(100+(100*i), 177, 10, 0, Math.PI * 2, 'black');
+                let lineTotTrang1 = new Line(73+(100*i), 740, 127+(100*i), 740, 10, 'white','round');
+                let lineTotTrang2 = new Line(85+(100*i), 710, 115+(100*i), 710, 7, 'white','round')
+                let arcTotTrang1 = new Arc(100+(100*i), 735, 25, 0, Math.PI, 'white');
+                let arcTotTrang2 = new Arc(100+(100*i), 697, 15, 0, Math.PI * 2, 'white');
+                let arcTotTrang3 = new Arc(100+(100*i), 677, 10, 0, Math.PI * 2, 'white');
+                lineTotDen1.lineDraw();
+                lineTotDen2.lineDraw();
+                arcTotDen1.arcDraw();
+                arcTotDen2.arcDraw();
+                arcTotDen3.arcDraw();
+                lineTotTrang1.lineDraw();
+                lineTotTrang2.lineDraw();
+                arcTotTrang1.arcDraw();
+                arcTotTrang2.arcDraw();
+                arcTotTrang3.arcDraw();  
+            }
+        }
+        conTot();
         
-        setInterval(function(){
-            ctx.clearRect(0,0, canvas.width, canvas.height)
-            arcDraw()
-        }, 1000)
+        function nhan2 (){
+            for (let i=0; i<3 ;i++) {
+        let lineXeDen1 = new Line(73+(700*i),140,127+(700*i),140,7,'black','round');
+        let lineXeDen2 = new Line(73+(700*i),135,127+(700*i),135,5,'black','butt');
+        let lineXeDen3 = new Line(77+(700*i),133,123+(700*i),133,5,'black','butt');
+        let lineXeDen4 = new Line(100+(700*i),133,100+(700*i),68,40,'black','butt');
+        let lineXeDen5 = new Line(77+(700*i),68,123+(700*i),68,5,'black','butt');
+        let lineXeDen6 = new Line(73+(700*i),65,127+(700*i),65,5,'black','butt');
+        let lineXeDen7 = new Line(80+(700*i),55,80+(700*i),65,10,'black','butt');
+        let lineXeDen8 = new Line(100+(700*i),55,100+(700*i),65,20,'black','butt');
+        let lineXeDen9 = new Line(120+(700*i),55,120+(700*i),65,10,'black','butt');
+        let lineXeTrang1 = new Line(73+(700*i),840,127+(700*i),840,7,'white','round');
+        let lineXeTrang2 = new Line(73+(700*i),835,127+(700*i),835,5,'white','butt');
+        let lineXeTrang3 = new Line(77+(700*i),833,123+(700*i),833,5,'white','butt');
+        let lineXeTrang4 = new Line(100+(700*i),763,100+(700*i),838,40,'white','butt');
+        let lineXeTrang5 = new Line(77+(700*i),768,123+(700*i),768,5,'white','butt');
+        let lineXeTrang6 = new Line(73+(700*i),765,127+(700*i),765,5,'white','butt');
+        let lineXeTrang7 = new Line(80+(700*i),755,80+(700*i),765,10,'white','butt');
+        let lineXeTrang8 = new Line(100+(700*i),755,100+(700*i),765,20,'white','butt');
+        let lineXeTrang9 = new Line(120+(700*i),755,120+(700*i),765,10,'white','butt');
+        lineXeDen1.lineDraw();
+        lineXeDen2.lineDraw();
+        lineXeDen3.lineDraw();
+        lineXeDen4.lineDraw();
+        lineXeDen5.lineDraw();
+        lineXeDen6.lineDraw();
+        lineXeDen7.lineDraw();
+        lineXeDen8.lineDraw();
+        lineXeDen9.lineDraw();
+        lineXeTrang1.lineDraw();
+        lineXeTrang2.lineDraw();
+        lineXeTrang3.lineDraw();
+        lineXeTrang4.lineDraw();
+        lineXeTrang5.lineDraw();
+        lineXeTrang6.lineDraw();
+        lineXeTrang7.lineDraw();
+        lineXeTrang8.lineDraw();
+        lineXeTrang9.lineDraw();
+    }
+}
+nhan2();
     </script>
 </body>
 
