@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/asset/style/layout.css}">
+    <title layout:title-pattern="$CONTENT_TITLE"></title>
+</head>
+
+<body>
+    <header id="header">
+        <div id="header-nav">
+            <div id="logo">
+                <p>EMPLOYEE-MANAGEMENT</p>
+            </div>
+            <div id="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a th:href="@{/emp}">HOME</a></li>
+                    <li class="nav-item"><a th:href="@{/emp/add}">ADD_EMPLOYEE</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="search">
+            <form th:action="@{/emp?}" method="GET">
+                <input type="search" id="search-input" name="search" th:value="${search}">
+                <button type="submit" id="search-btn" >Search</button>
+            </form>
+        </div>
+    </header>
+    <div layout:fragment="content">
+    </div>
+    <footer>
+        <div>
+            <p>Made by Nguyễn Trung Hiếu</p>
+        </div>
+    </footer>
+</body>
+
+</html>

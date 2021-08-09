@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" th:href="@{/asset/css/nav_layout.css}" />
+  <link rel="stylesheet" th:href="@{/asset/css/people.css}" />
+  <title>Home</title>
+  <style>
+    table,
+    tr,
+    th,
+    td {
+      border: 1px solid black;
+    }
+
+    table {
+      margin-left: 40px;
+      margin-top: 40px;
+    }
+
+    h1,
+    p {
+      margin-left: 20px;
+    }
+
+    tr,
+    th,
+    td {
+      width: 30px;
+    }
+
+    #content {
+      display: flex;
+    }
+    form {
+      margin-left: 20px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <header th:replace="~{/nav_layout::header}"></header>
+  <h1 th:text="#{title.job}">LIST JOBS</h1>
+
+  <form th:action="@{/jobs}" method="post" th:object="${job}">
+    <input type="text" th:placeholder="#{placeholder}" name="name" th:field="*{name}">
+    <button type="submit" th:text="#{submit_form}"></button>
+    <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div> 
+    <div class="error" th:if="${msg}" th:text="${msg}"></div> 
+  </form>
+
+  <table>
+    <thead>
+      <th>ID</th>
+      <th th:text="#{job}"></th>
+    </thead>
+    <tbody>
+      <tr th:each="ele : ${jobs}">
+        <td th:text="${ele.id}"></td>
+        <td th:text="${ele.name}"></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css} " />
+    <link rel="stylesheet" th:href="@{css/template.css}">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+    <title>Home</title>
+
+</head>
+
+<body>
+    <div th:replace="~{template :: header}"></div>
+    <div id="content" class="grid-container">
+        <div id="tr" th:each="product : ${products}">
+            <div class="img"><img th:src="@{'/photos/' + ${product.photo}}" alt="product-img"></div>
+            <div class="product-info">
+                <p th:text="|Sản phẩm: ${product.name}|"></p>
+                <p th:text="|Nhà sản xuất: ${product.manufacturer}|"></p>
+                <p th:text="|Giá: ${product.price}|"></p>
+                <button id="btn-add-to-cart" type="button"
+                    th:onclick="|window.location.href='/add-to-cart/${product.id}'|" th:text="|Add to cart|"></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

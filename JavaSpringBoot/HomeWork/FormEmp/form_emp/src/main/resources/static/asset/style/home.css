@@ -1,0 +1,41 @@
+body{
+    width: 100vw;
+}
+#table-emp{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table,th,tr,td {
+    border: 2px solid black;
+    
+}
+.create {
+    margin: 10px;
+}
+a {
+    font-style: italic;
+}
+
+.width150{
+    width: 150px;
+}
+
+.width50{
+    width: 50px;
+}
+
+.text-center{
+    text-align: center;
+    text-decoration: none;
+    font-style: normal;
+    color: red;
+}
+
+#message {
+    text-align: center;
+}
+h1{
+    text-align: center;
+}

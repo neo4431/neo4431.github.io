@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style th:fragment="header" th:inline="css">
+        body{
+            background-color: [[${bg}]];
+            font-size: [[${fs}]];
+            color: [[${cl}]];
+        }
+    </style>
+</head>
+
+<body>
+    <div th:fragment="menu">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/blog}">Blog</a>
+        <a th:href="@{/setting}">Setting</a>
+    </div>
+</body>
+<script th:fragment="script">
+    function getCookie(cname) {
+        let name = cname + "=";
+        let arrCookie = document.cookie.split(';');
+        for (let i = 0; i < arrCookie.length; i++) {
+            let c = arrCookie[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    let bgColor = getCookie("bgColor");
+    let fontColor = getCookie("fontColor");
+    let fontSize = getCookie("fontSize");
+    if (bgColor != "") {
+        console.log(fontSize);
+        document.body.style.backgroundColor = bgColor;
+        document.body.style.color = fontColor;
+        document.body.style.fontSize = fontSize;
+    }
+</script>
+
+</html>

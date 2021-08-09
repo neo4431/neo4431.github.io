@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/5.0.1/css/bootstrap.min.css} " />
+    <link rel="stylesheet" th:href="@{css/template.css}">
+    <link rel="stylesheet" th:href="@{css/checkout.css}">
+    <title>Check Out</title>
+</head>
+
+<body>
+    <div th:replace="~{template :: header}"></div>
+    <div id="content">
+        <div class="text-title"><strong>Đơn hàng của bạn: </strong></div>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th class="width5"><strong>#</strong></th>
+                    <th class="width45"><strong>Name</strong></th>
+                    <th class="width15"><strong>Manufacturer</strong></th>
+                    <th class="width10"><strong>Price</strong></th>
+                    <th class="width15"><strong>Count</strong></th>
+                    <th class="width10 text-end"><strong>Sub Total</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="ele , state:${cart.orderLines}">
+                    <td th:text=${state.index}+1></td>
+                    <td th:text=${ele.product.name}></td>
+                    <td th:text=${ele.product.manufacturer}></td>
+                    <td th:text=${ele.product.price}></td>
+                    <td> &emsp; [[${ele.count}]] &emsp;
+                        <button class="btn-count" type="button"
+                            th:onclick="|window.location.href='/decrease/${ele.product.id}'|">&#8211;</button>
+                        <button class="btn-count" type="button"
+                            th:onclick="|window.location.href='/increase/${ele.product.id}'|">+</button>
+                    </td>
+                    <td class="text-end" th:text=${ele.product.price}*${ele.count}></td>
+                </tr>
+                <tr id="raw-total">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Raw Total</td>
+                    <td></td>
+                    <td class="text-end" th:text="${cart.rawTotal}"></td>
+                </tr>
+                <tr id="discount">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Discount</td>
+                    <td></td>
+                    <td class="text-end" th:text="${cart.discount}"></td>
+                </tr>
+                <tr id="vat">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>VAT</td>
+                    <td></td>
+                    <td class="text-end" th:text="${cart.vatTax}"></td>
+                </tr>
+                <tr id="total">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td></td>
+                    <td class="text-end" th:text="${cart.total}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div>
+            <div class="text-title"><strong>Địa chỉ giao hàng: </strong></div>
+            <form th:action="@{/}" method="post" th:object="${user}">
+                <label for="name">Họ và tên: </label><br>
+                <input type="text" name="name" id="name" value="" th:field="*{name}">
+                <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                <br>
+                <label for="phoneNumber">Di động: </label><br>
+                <input type="text" name="phoneNumber" id="phoneNumber" value="" th:field="*{phoneNumber}">
+                <div class="text-danger" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></div>
+                <br>
+                <label for="email">Email: </label><br>
+                <input type="mail" name="email" id="email" value="" th:field="*{email}">
+                <div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                <br>
+                <br>
+                <input type="submit" value="Xác nhận đơn hàng">
+            </form>
+        </div>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/asset/css/nav_layout.css}" />
+    <link rel="stylesheet" th:href="@{/asset/css/people.css}" />
+    <title>Home</title>
+    <style>
+        table {
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        td {
+            width: 100px;
+        }
+
+        img{
+            max-width: 150px;
+            max-height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <header th:replace="~{/nav_layout::header}"></header>
+    <table>
+        <td>
+            <img th:src="@{'/photos/' + ${person.id} + '.jpg'}" alt="">
+        </td>
+        <td>
+            <p>Họ và tên </p>
+            <p>Nghề nghiệp </p>
+            <p>Giới tính </p>
+            <p>Ngày sinh: </p>
+        </td>
+        <td>
+            <p th:text="${person.fullName}"></p>
+            <p th:text="${person.job}"></p>
+            <p th:text="${person.gender}"></p>
+            <p th:text="${person.birthDate}"></p>
+        </td>
+    </table>
+</body>
+
+</html>

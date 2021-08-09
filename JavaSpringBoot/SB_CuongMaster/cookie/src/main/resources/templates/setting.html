@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting</title>
+    <style th:replace="template :: header"></style>
+    <style>
+        .margin-left50 {
+            margin-left: 50px;
+        }
+        .margin-bottom10 {
+            margin-left: 10px;
+        }
+        .margin-top50 {
+            margin-top: 50px;
+        }
+        .flex {
+            display: flex;
+        }
+        .column {
+            flex-direction: column;
+        }
+        label {
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div th:replace="template :: menu"></div>
+    <form class="margin-left50 margin-top50" th:action="@{/}" method="post" th:object="${color}">
+        <div class="flex">
+            <div class="flex column">
+                <label for="backgroundColor">Background Color</label>
+                <select name="backgroundColor" id="background">
+                    <option th:each="ele : ${colors}" th:text="${ele}" th:value="${ele}" th:field="*{backgroundColor}"></option>
+                </select>
+            </div>
+            <div class="flex column margin-left50">
+                <label for="fontColor">Font Color</label>
+                <select name="fontColor" id="fontColor">
+                    <option th:each="ele : ${colors}" th:text="${ele}" th:value="${ele}" th:field="*{fontColor}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="margin-top50">
+            <label for="size">Font Size</label><br>
+            <span>0.5 em</span>
+            <input type="range" name="size" id="size" min="5.0" max="30.0" th:field="*{fontSize}">
+            <span>3.0 em</span>
+        </div>
+        <input class="margin-top50" type="submit" value="Save Setting">
+    </form>
+</body>
+<script th:replace="template :: script">
+</script>
+
+</html>

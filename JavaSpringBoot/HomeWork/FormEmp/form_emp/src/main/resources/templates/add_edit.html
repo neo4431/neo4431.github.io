@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/asset/style/add_edit.css}">
+    <title th:text="${title}"></title>
+    <style>
+        .errors {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <form th:action="@{/emp}" method="POST" th:object="${emp}">
+            <fieldset>
+                <legend th:text="${title}"></legend>
+                <input type="hidden" name="id" id="id" value="" th:field="*{id}">
+                <label for="first_name">First Name: </label>
+                <input type="text" name="firstName" id="firstName" value="" th:field="*{firstName}">
+                <span th:each="err : ${#fields.errors('firstName')}" th:text="| - ${err}|" class="errors"></span><br>
+                <label for="last_name">Last Name: </label>
+                <input type="text" name="last_name" id="lastName" value="" th:field="*{lastName}">
+                <span th:each="err : ${#fields.errors('lastName')}" th:text="| - ${err}|" class="errors"></span><br>
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" value="" th:field="*{emailId}">
+                <span th:each="err : ${#fields.errors('emailId')}" th:text="| - ${err}|" class="errors"></span><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

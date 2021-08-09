@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" th:href="@{/asset/css/nav_layout.css}" />
+  <link rel="stylesheet" th:href="@{/asset/css/people.css}" />
+  <title>Home</title>
+  <style>
+        table , tr, td ,th{
+            border: 1px solid black;
+        }
+        table {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+        .width150 {
+            width: 150px;
+        }
+        .width30 {
+            width: 30px;
+            text-align: center;
+        }
+        img {
+            height: 100%;
+        }
+        .setting {
+            width: 75px;
+        }
+        .text {
+            margin-top: 20px;
+            margin-left: 30px;
+            font-size: 20px;
+        }
+  </style>
+</head>
+<body>
+    <header th:replace="~{/nav_layout::header}"></header>
+    <div class="text"><a th:href="@{/}" th:text=#{add_person}></a></div>
+    <div class="text" th:if="${people.isEmpty}" th:text="#{status_list}"><p></p></div>
+    <table th:unless="${people.isEmpty}">
+        <tr class="width150">
+            <th class="width30" th:text="#{stt}"></th>
+            <th class="width150" th:text="#{avatar}">ẢNH ĐẠI DIỆN</th>
+            <th class="width150" th:text="#{name}">HỌ VÀ TÊN</th>
+            <th class="width150" th:text="#{job}">NGHỀ NGHIỆP</th>
+            <th class="width150" th:text="#{gender}">GIỚI TÍNH</th>
+            <th class="width150" th:text="#{birthdate}">NGÀY SINH</th>
+            <th colspan="2" class="width150" th:text="#{title.action}">TÙY CHỌN</th>
+        </tr>
+        <tr class="width150" th:each="person,state : ${people}">
+            <td th:text="${state.index + 1}"></td>
+            <td class="width150"><img th:src="@{'/photos/' + ${person.id} + '.jpg'}" alt="avatar"></td>
+            <td class="width150" th:text="${person.fullName}"></td>
+            <td class="width150" th:text="${person.job}"></td>
+            <td class="width150" th:text="${person.gender}"></td>
+            <td class="width150" th:text="${person.birthDate}"></td>
+            <td class="setting"><a th:href="@{/edit/{id}(id=${person.id})}" th:text="#{edit}">Edit</a></td>
+            <td class="setting"><a th:href="@{/delete/{id}(id=${person.id})}" th:text="#{delete}">Delete</a></td>
+        
+        </tr>
+    </table>
+</body>
+
+</html>

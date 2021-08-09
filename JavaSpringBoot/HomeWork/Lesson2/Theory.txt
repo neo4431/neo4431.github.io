@@ -1,0 +1,12 @@
+1. Đối tượng Bean và Component khi đăng ký vào Application Context có đặc điểm gì?
+ Trả lời: cả 2 đều là class.
+	- @Component thì đánh dấu cho class
+	- @Bean thì đánh dấu phương thức(phương thức đó trả về đối tượng cụ thể) 
+		cần có @Configurat0ion trên Class chứa các method đó (cả class chứa và các @bean bên trong đều được nạp vào context)
+		Tên của Bean sẽ là tên phương thức
+		
+2. Khi cần chọn để tuỳ biến tạo đối tượng, chúng ta chọn annotation nào ```@Component``` hay ```@Bean```?
+ Trả lời: Nên dùng @Bean vì có thể tùy biến bằng cách truyền tham số vào method
+3. Khái niệm Singleton
+ Trả lời : Singleton là 1 Scope của Bean. Đây là scope mặc định. 1 bean được định nghĩa là Singleton thì IoC sẽ chỉ khởi tạo duy nhất 1 instance cho bean đó.
+	-> nếu có bất cứ thay đổi nào của bean đó thì đều ảnh hưởng đến tất cả các nơi đang tham chiếu đến nó.

@@ -1,0 +1,30 @@
+.name{
+    width: 100%px;
+    height: 150px;
+    background-color: cornflowerblue;
+}
+.title{
+    width: 100%px;
+    height: 30px;
+    background-color: orange;
+}
+.h1-name{
+    font-size: 50px;
+    padding-left: 30px;
+    padding-top: 40px;
+    margin: 0px;
+}
+img{
+    width: 300px;
+    height: 200px;
+}
+.li-list{
+    display: flex;
+    margin-bottom: 30px;
+}
+.info{
+    margin-left: 30px;
+}
+.p-info{
+    margin-top: 30px;
+}

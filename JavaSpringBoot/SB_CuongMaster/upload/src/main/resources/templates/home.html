@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" th:href="@{/asset/css/nav_layout.css}" />
+  <link rel="stylesheet" th:href="@{/asset/css/home.css}" />
+  <title>Home</title>
+</head>
+
+<body>
+  <header th:replace="~{/nav_layout::header}"></header>
+  <div id="content">
+    <form th:action="@{/}" method="post" th:object="${person}" enctype="multipart/form-data">
+      <fieldset>
+        <legend th:text=${title}>REGISTED</legend>
+      <input type="hidden" name="id" value="" th:field="*{id}" />
+      <label for="fullName" th:text="|#{name} : |"></label>
+      <input type="text" name="fullName" value="" th:field="*{fullName}" />
+      <div class="error" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></div><br><br>
+      <label for="job" th:text="|#{job} : |"></label>
+      <select name="job" th:field="*{job}">
+        <option th:each="ele : ${jobs}" th:value="${ele.name}" th:text="${ele.name}"></option>
+      </select>
+      <div class="error" th:if="${#fields.hasErrors('job')}" th:errors="*{job}"></div><br>
+      <span th:text="|#{gender} : |"></span>
+      <label for="male">Nam</label>
+      <input type="radio" id="male" name="gender" value="male" />&emsp;
+      <label for="female">Nữ</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <div class="error" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
+      <br>
+      <label for="birthDate" th:text="|#{birthdate} : |"></label>
+      <input type="date" name="birthDate" id="birthDate" th:field="*{birthDate}" th:value="${person.birthDate}"/>
+      <div class="error" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}"></div>
+      <br><br>
+      <label for="file" th:text="|#{avatar} : |"></label>
+      <input name="file" type="file" th:field="*{file}"/>
+      <div class="error" th:if="${#fields.hasErrors('file')}" th:errors="*{file}"></div>
+      <br><br>
+      <button type="submit" th:text="#{submit_form}"></button>
+    </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>

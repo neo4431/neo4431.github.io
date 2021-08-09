@@ -1,0 +1,49 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 80% 20%;
+  background-color: rgb(55, 55, 128);
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#header a {
+  text-decoration: none;
+  color: white;
+}
+
+#logo {
+  line-height: 50px;
+  margin-left: 60px;
+  font-size: 30px;
+}
+
+#check-out{
+    line-height: 50px;
+    margin-left: 30px; 
+    margin-right: 50px;
+}
+#btn-checkout{
+    background:    #a3b0d3;
+    border-radius: 11px;
+    padding:       5px 12px;
+    color:         #221e1e;
+    display:       inline-block;
+    font:          normal bold 16px/1 "Open Sans", sans-serif;
+    text-align:    center;
+}
+.grid-container {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto auto;
+}

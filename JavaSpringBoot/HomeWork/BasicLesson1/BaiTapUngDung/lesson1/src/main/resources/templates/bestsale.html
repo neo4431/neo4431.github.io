@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <title>Xe bán chạy nhất 11/2020</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="name">
+            <h1 th:text="${appName}" class="h1-name"></h1>
+        </div>
+        <div class="title"><h2>Danh sách ô tô bán chạy nhất 11/2020</h2></div>
+        <ul class="ul-list">
+            <li th:each="car: ${cars}" class="li-list">
+                <img th:attr="src=@{'/images/' + ${car.id} + '.jpg'}, alt=${car.name}" />
+                <div class="info">
+                    <p th:text="${car.name}" class="p-info"></p>
+                    <p th:text="${car.manufacturer}" class="p-info"></p>
+                    <p th:text="${car.price + ' triệu'}" class="p-info"></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

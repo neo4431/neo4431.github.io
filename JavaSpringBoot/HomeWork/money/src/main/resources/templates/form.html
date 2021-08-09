@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/style/form.css}">
+  <title>Money Converter Form</title>
+</head>
+
+<body>
+  <div id="app">
+  <h1>Thí nghiệm: tạo form chuyển đổi tiền tệ</h1>
+  <br>
+  <div id="container">
+    <form action="#" th:action="@{/money}" method="post" th:object=${moneyConvertRequest}>
+      <div>
+        <label for="amount">Amount</label><br>
+        <input type="number" id="amount" th:field="${moneyConvertRequest.amount}" min="0">
+      </div>
+      <div>
+        <label for="fromCurrencySelect">From</label><br>
+        <select th:field="${moneyConvertRequest.fromCurrency}" id="fromCurrencySelect">
+          <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.name}"></option>
+        </select>
+      </div>
+      <div>
+        <label for="toCurrencySelect">To</label><br>
+        <select th:field="${moneyConvertRequest.toCurrency}" id="toCurrencySelect">
+          <option th:each="currency : ${currencies}" th:value="${currency.code}" th:text="${currency.name}"></option>
+        </select>
+      </div>
+      <div>
+        <button type="sumoneyt">Convert</button>
+      </div>
+    </form>
+    <div id="result" th:object=${moneyConvertRequest} th:if="${moneyConvertRequest.amount != 0}">
+      <p class="p1-result" th:text="|*{amount} *{fromCurrency} =|"></p>
+      <p class="p2-result" th:text="|${result} *{toCurrency}|"></p>
+      <p class="p3-result" th:text="|1 *{toCurrency} = ${exRateBetweenFromAndTo} *{fromCurrency}|"></p>
+      <p class="p3-result" th:text="|1 *{fromCurrency} = ${exRateBetweenToAndFrom} *{toCurrency}|"></p>
+    </div>
+  </div>
+  <div class="error"><p th:text="${message}"></p></div>
+</div>
+  <script>
+      let inputNumber = document.getElementById("amount");
+      inputNumber.addEventListener('change', () =>{
+        if(inputNumber.value == ''){
+          inputNumber.value = 0;
+        }
+      }) 
+  </script>
+</body>
+
+</html>

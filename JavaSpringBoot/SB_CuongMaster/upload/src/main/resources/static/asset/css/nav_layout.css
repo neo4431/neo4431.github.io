@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(55, 55, 128);
+}
+
+#header-nav {
+    display: flex;
+}
+
+#nav .nav-list{
+    display: flex;
+}
+
+#nav .nav-item{
+    list-style-type: none;
+    margin-left: 50px;
+    line-height: 30px;
+}
+#nav .nav-item:hover a{
+    color: rgb(126, 124, 124);
+}
+#nav .nav-item a{
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 20px;
+}
+#language ul {
+    display: flex;
+}
+
+#language ul li{
+    list-style-type: none;
+    line-height: 30px;
+    color: white;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 20px;
+    margin-right: 30px;
+}
